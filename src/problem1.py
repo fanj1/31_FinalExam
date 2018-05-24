@@ -172,6 +172,11 @@ def problem1b(numbers):
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
+    ans = 0
+    for k in range(len(numbers) // 3):
+        ans = ans + numbers[len(numbers) // 3 + k]
+    return ans
+
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
