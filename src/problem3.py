@@ -2,9 +2,9 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Jun Fan.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import time
@@ -96,6 +96,37 @@ def problem3(point, circle1, circle2, window):
     # TODO: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
+
+    col = circle1.fill_color
+    color = circle2.fill_color
+    p1 = circle1.center
+    p2 = circle2.center
+
+    line1 = rg.Line(point, p1)
+    line1.color = col
+    line2 = rg.Line(point, p2)
+    line2.color = col
+    line3 = rg.Line(p2, p1)
+    line3.color = col
+
+    line4 = rg.Line(line1.get_midpoint(), line2.get_midpoint())
+    line4.color = color
+    line5 = rg.Line(line3.get_midpoint(), line2.get_midpoint())
+    line5.color = color
+    line6 = rg.Line(line3.get_midpoint(), line1.get_midpoint())
+    line6.color = color
+
+    point.attach_to(window)
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+    line1.attach_to(window)
+    line2.attach_to(window)
+    line3.attach_to(window)
+    line4.attach_to(window)
+    line5.attach_to(window)
+    line6.attach_to(window)
+
+    window.render()
 
 
 # -----------------------------------------------------------------------------
