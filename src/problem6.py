@@ -113,6 +113,6 @@ And this one for n=14:
 
 
 # ----------------------------------------------------------------------
-# Calls  main  to start the ball rolling.
+# Calls  main  to start the ball rolling..
 # ----------------------------------------------------------------------
 main()
