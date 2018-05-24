@@ -50,8 +50,8 @@ def main():
 
     k = Pig(300)
     print('-----------------------------------')
-    print('expected heavier pig:', 'this pig')
-    print('actual heavier pig:', p.heavier_pig(k))
+    print('expected heavier pig:', p.get_weight())
+    print('actual heavier pig:', p.heavier_pig(k).get_weight())
 
     q = Pig(300)
     print('-----------------------------------')
@@ -60,8 +60,8 @@ def main():
 
     q = Pig(100)
     print('-----------------------------------')
-    print('expected heavier pig:', 'other pig')
-    print('actual heavier pig:', q.heavier_pig(k))
+    print('expected heavier pig:', k.get_weight())
+    print('actual heavier pig:', q.heavier_pig(k).get_weight())
 
     i = k.new_pig(q)
     print('-----------------------------------')
@@ -110,9 +110,9 @@ class Pig(object):
         whichever is heavier.
         """
         if self.weight > other_pig.get_weight():
-            return 'this pig'
+            return self
         if self.weight < other_pig.get_weight():
-            return 'other pig'
+            return other_pig
         if self.weight == other_pig.get_weight():
             return 'same weight'
         # DONE: Implement and test this method.
