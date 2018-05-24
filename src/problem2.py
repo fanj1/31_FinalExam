@@ -256,9 +256,20 @@ def problem2b(sequence):
       :type sequence  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+
+    ans = None
+    number = sequence[0]
+    for k in range(len(sequence)):
+        if sequence[k] > number:
+            number = sequence[k]
+            ans = k
+        if -sequence[k] > number:
+            number = -sequence[k]
+            ans = k
+    return ans
 
 
 def run_test_problem2c():
@@ -399,9 +410,13 @@ def problem2c(x):
       :type x:    int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+
+    while not is_prime(x) or not is_prime(sum_of_digits(x)):
+        x = x + 1
+    return x
 
 
 ###############################################################################
